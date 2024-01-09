@@ -64,3 +64,15 @@ def sender_email(subject, receiver_email, name, due_date, invoice_no, amount):
     msg["From"] = formataddr((f"Email_sender, {sender_email}"))
     msg["To"] = receiver_email
     msg["BCC"] = sender_email
+
+    msg.set_content(
+        f"""\
+        Hi {name},
+        I hope you are well
+        I just wanted to drop you a quick note to reminde you that {amount}£ in respect of our invoice
+        {invoice_no} is due for payment on {due_date}.
+        I would be really grateful if you could confirm that everything is on track for payment.
+        Best regards
+        Email_sender Name
+        """
+    )
