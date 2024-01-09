@@ -18,3 +18,49 @@ load_dotenv(envars)
 # Read environment variables
 sender_email = os.getenv("EMAIL")
 password_email = os.getenv("Password")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# create email sender function taking all the email parameters same as our spreedsheet file
+
+def sender_email(subject, receiver_email, name, due_date, invoice_no, amount):
+    # Base text
+    msg = EmailMessage()
+    msg["Subject"] = subject
+    msg["From"] = formataddr((f"Email_sender, {sender_email}"))
+    msg["To"] = receiver_email
+    msg["BCC"] = sender_email
